@@ -1,7 +1,8 @@
 #  HTML Template to Angular Component:
-
+  How to used html template in angular project
 ## Step 1:
  Create new angular project
+ `ng new project_name`
  
  ## Step 2:
  Search html single page template
