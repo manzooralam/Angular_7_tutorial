@@ -27,9 +27,14 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 
-# ngx-google-places-autocomplete:
+# Google places autocomplete:
+
+By using  'ngx-google-places-autocomplete'
  
  (See about google-places-autocomplete)[https://www.npmjs.com/package/ngx-google-places-autocomplete]
+ 
+ (See more details)[https://medium.com/@abhishek_menon/custom-directives-in-angular-6-building-a-google-places-autocomplete-4b418ee674ce]
+ 
 
  This module is a wrapper for Google Places Autocomplete js library.
   
