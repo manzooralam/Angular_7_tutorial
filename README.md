@@ -25,3 +25,58 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+# ngx-google-places-autocomplete
+ This module is a wrapper for Google Places Autocomplete js library.
+  
+## Step 1: Installation
+
+` npm install ngx-google-places-autocomplete `
+
+## Step 2: Integration
+
+  1. Add google library in your index.html file :
+  
+   `  <script src="https://maps.googleapis.com/maps/api/js?key=<Your API KEY>&libraries=places&language=en"></script> `
+
+  2. Replace with google places api key. Ref - https://developers.google.com/places/web-service/get-api-key
+  
+## Step 2: Usage
+
+  1.Add a module into your application (as a rule app.module.ts)
+
+``` 
+import { GooglePlaceModule } from "ngx-google-places-autocomplete";
+
+@NgModule({
+    imports: [GooglePlaceModule, BrowserModule, FormsModule, ...],
+        ....
+        })
+```
+
+ 2. Add directive ngx-google-places-autocomplete to your input field (options is an optional parammeter)
+
+` <input ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)"/>  `
+
+3. Additionally you can reference directive in your component
+
+```
+   @ViewChild("placesRef") placesRef : GooglePlaceDirective;
+    
+        public handleAddressChange(address: Address) {
+        // Do some stuff
+    }
+    
+    ```
+    
+## Step 3:
+Refer to original google maps api - https://developers.google.com/maps/documentation/javascript/places-autocomplete Options object - https://github.com/skynet2/ngx-google-places-autocomplete/blob/master/src/objects/options/options.ts
+
+
+exampe: 
+options={
+    types: [],
+    componentRestrictions: { country: 'IN' }
+    }
+       
