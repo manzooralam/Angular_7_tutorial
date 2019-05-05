@@ -84,4 +84,28 @@ options={
     }
        
   ```  
+  
+  ## Issues 
+  
+Hi,
+I'm trying to migrate my project to "aot" compilation and I got this error when running ng serve --aot
+
+ERROR in : There is no directive with "exportAs" set to "ngx-places" ("[options]='options' [ERROR ->]#placesRef="ngx-places" (onAddressChange)="handl") : Can't bind to 'options' since it isn't a known property of 'input'. (" <input ngx-google-places-autocomplete [ERROR ->][options]='options' #placesRef="ngx-places" ")
+
+I tried to import GooglePlaceModule in app.module.ts and in my component's module but nothing changes. I also tried with
+
+@ViewChild("placesRef") placesRef : GooglePlaceDirective;
+
+and directly importing the directive to my component, bu nothing changes.
+
+What am I missing ,
+
+Thanks a lot!
+
+## resolved:
+
+Didn't work when I registered it in a root module. But it did work when I moved it to component's module. I think this has something to do with importing and exporting. You may need to add GooglePlaceModule to exports array when using in a root module.
+
+
+  
        
